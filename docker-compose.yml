@@ -1,0 +1,19 @@
+version: "3"
+services:
+  manager:
+    build : . 
+    depends_on:
+      - db
+  db:
+    image: postgres
+    restart: always
+    #variables d'environnement pour initialiser la db
+    #Les valeurs doivent être les mêmes que celles spécifiées dans le dockerfile
+    environment:
+      POSTGRES_USER: valot
+      POSTGRES_PASSWORD: cv
+      POSTGRES_DB: database
+
+  
+
+
